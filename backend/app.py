@@ -1,4 +1,6 @@
 # app.py
+import os
+from flask import Flask
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import torch
@@ -59,6 +61,7 @@ def upload_image():
 
     return jsonify({'image': jpg_as_text})
 
-if __name__ == '__main__':
-    app.run(port=5000)
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port)
 
