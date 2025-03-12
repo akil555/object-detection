@@ -13,6 +13,7 @@ import cv2
 import numpy as np
 
 app = Flask(__name__)
+@app.route("/")
 CORS(app)  # Allow CORS for frontend to access the backend
 
 model = torchvision.models.detection.fasterrcnn_resnet50_fpn(pretrained=True)
@@ -62,6 +63,5 @@ def upload_image():
     return jsonify({'image': jpg_as_text})
 
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))
-    app.run(host='0.0.0.0', port=port,debug=False)
+    app.run(debug=False)
 
