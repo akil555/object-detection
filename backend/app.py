@@ -51,7 +51,7 @@ def upload_image():
     for i in range(num):
         x1, y1, x2, y2 = bboxes[i].numpy().astype("int")
         class_name = coco_names[labels.numpy()[i] - 1]
-        cv2.rectangle(igg, (x1, y1), (x2, y2), (0, 255, 0), 1)
+        cv2.rectangle(igg, (x1, y1), (x2, y2), (0, 255, 255), 1)
         cv2.putText(igg, class_name, (x1, y1 - 10), cv2.FONT_HERSHEY_COMPLEX, 0.5, (255, 255, 255), 1, cv2.LINE_AA)
 
     _, buffer = cv2.imencode('.jpg', igg)
