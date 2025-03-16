@@ -2,9 +2,7 @@ Flask
 flask-cors
 torch
 torchvision
-torchaudio
 Pillow
 opencv-python-headless
 numpy
-opencv-python
 gunicorn
